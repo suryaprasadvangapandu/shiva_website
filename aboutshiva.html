@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Shiva | Mahadev</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #effaff;
+            color: #172b3a;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            width: 100%;
+            height: 80px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 6%;
+
+            background: rgba(255, 255, 255, 0.90);
+
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            z-index: 1000;
+
+            box-shadow: 0 3px 20px rgba(33, 150, 200, 0.08);
+        }
+
+        .logo {
+            font-family: "Playfair Display", serif;
+
+            font-size: 27px;
+            font-weight: 700;
+
+            color: #176b91;
+
+            text-decoration: none;
+        }
+
+        .logo span {
+            font-family: "Poppins", sans-serif;
+            font-size: 18px;
+            letter-spacing: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+
+            color: #172b3a;
+
+            font-size: 14px;
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2196c8;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+
+            background: #2196c8;
+            color: white;
+
+            padding: 11px 22px;
+
+            border-radius: 25px;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #176b91;
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= HERO ================= */
+
+        .about-hero {
+            min-height: 100vh;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            padding-top: 80px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(239, 250, 255, 0.70),
+                    rgba(255, 255, 255, 0.95)
+                );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 5;
+
+            max-width: 900px;
+
+            padding: 40px 20px;
+        }
+
+        .om {
+            font-family: "Playfair Display", serif;
+
+            font-size: 90px;
+
+            color: #2196c8;
+
+            line-height: 1;
+
+            margin-bottom: 10px;
+        }
+
+        .hero-small {
+            letter-spacing: 7px;
+
+            font-size: 13px;
+
+            color: #64748b;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(55px, 9vw, 110px);
+
+            color: #176b91;
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-family: "Playfair Display", serif;
+
+            font-size: 28px;
+
+            color: #2196c8;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-text {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #64748b;
+
+            line-height: 1.8;
+
+            font-size: 15px;
+        }
+
+        /* Vibhuti */
+
+        .vibhuti {
+            margin: 25px auto;
+
+            width: 70px;
+        }
+
+        .vibhuti span {
+            display: block;
+
+            height: 4px;
+
+            margin: 5px 0;
+
+            border-radius: 10px;
+
+            background: #d5d9dd;
+        }
+
+        /* Himalayas */
+
+        .mountains {
+            position: absolute;
+
+            bottom: -20px;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 2;
+
+            opacity: 0.65;
+
+            pointer-events: none;
+        }
+
+        .mountains img {
+            width: 100%;
+
+            display: block;
+        }
+
+
+        /* ================= WHO IS SHIVA ================= */
+
+        .who-section {
+            background: white;
+
+            padding: 120px 8%;
+        }
+
+        .who-container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 80px;
+
+            align-items: center;
+        }
+
+        .section-label {
+            color: #2196c8;
+
+            font-size: 13px;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-family: "Playfair Display", serif;
+
+            font-size: 50px;
+
+            color: #176b91;
+
+            line-height: 1.2;
+
+            margin-bottom: 25px;
+        }
+
+        .who-text {
+            color: #64748b;
+
+            line-height: 1.9;
+
+            font-size: 15px;
+
+            margin-bottom: 20px;
+        }
+
+        .shiva-image-box {
+            position: relative;
+
+            min-height: 500px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .shiva-image-box::before {
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            background: #e6f7ff;
+
+            border-radius: 50%;
+
+            z-index: 0;
+        }
+
+        .shiva-image {
+            position: relative;
+
+            z-index: 2;
+
+            width: 90%;
+
+            max-width: 500px;
+
+            height: 500px;
+
+            object-fit: contain;
+        }
+
+
+        /* ================= SYMBOLS ================= */
+
+        .symbols-section {
+            padding: 120px 8%;
+
+            background: #effaff;
+
+            text-align: center;
+        }
+
+        .symbols-container {
+            max-width: 1200px;
+
+            margin: 60px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 25px;
+        }
+
+        .symbol {
+            background: white;
+
+            padding: 40px 25px;
+
+            border-radius: 20px;
+
+            transition: 0.4s;
+
+            border: 1px solid #dceff6;
+        }
+
+        .symbol:hover {
+            transform: translateY(-10px);
+
+            box-shadow: 0 15px 40px rgba(33, 150, 200, 0.12);
+        }
+
+        .symbol-icon {
+            font-family: "Playfair Display", serif;
+
+            font-size: 50px;
+
+            color: #2196c8;
+
+            margin-bottom: 20px;
+        }
+
+        .symbol h3 {
+            font-family: "Playfair Display", serif;
+
+            color: #176b91;
+
+            font-size: 24px;
+
+            margin-bottom: 12px;
+        }
+
+        .symbol p {
+            color: #64748b;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        /* ================= FORM ================= */
+
+        .form-section {
+            background: white;
+
+            padding: 120px 8%;
+        }
+
+        .form-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .form-title {
+            font-family: "Playfair Display", serif;
+
+            font-size: 50px;
+
+            color: #176b91;
+
+            margin-bottom: 60px;
+        }
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 15px;
+        }
+
+        .form-item {
+            padding: 30px 15px;
+
+            border-bottom: 2px solid #dceff6;
+        }
+
+        .form-item span {
+            display: block;
+
+            font-size: 12px;
+
+            color: #2196c8;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .form-item h3 {
+            font-family: "Playfair Display", serif;
+
+            color: #176b91;
+
+            font-size: 22px;
+        }
+
+
+        /* ================= MANTRA ================= */
+
+        .mantra-section {
+            min-height: 500px;
+
+            padding: 100px 20px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    rgba(239, 250, 255, 0.90),
+                    rgba(255, 255, 255, 0.95)
+                );
+        }
+
+        .mantra-om {
+            font-family: "Playfair Display", serif;
+
+            font-size: 100px;
+
+            color: #2196c8;
+
+            margin-bottom: 10px;
+        }
+
+        .mantra {
+            font-family: "Playfair Display", serif;
+
+            font-size: clamp(40px, 6vw, 75px);
+
+            color: #176b91;
+
+            margin-bottom: 20px;
+        }
+
+        .mantra-meaning {
+            color: #64748b;
+
+            font-size: 15px;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #176b91;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+        .footer-logo {
+            font-family: "Playfair Display", serif;
+
+            font-size: 35px;
+
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #d9f3ff;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-btn {
+                display: none;
+            }
+
+            .who-container {
+                grid-template-columns: 1fr;
+            }
+
+            .shiva-image-box {
+                order: -1;
+            }
+
+            .symbols-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .logo {
+                font-size: 23px;
+            }
+
+            .hero-title {
+                font-size: 55px;
+            }
+
+            .hero-subtitle {
+                font-size: 22px;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .shiva-image-box {
+                min-height: 400px;
+            }
+
+            .shiva-image {
+                height: 400px;
+            }
+
+            .shiva-image-box::before {
+                width: 300px;
+                height: 300px;
+            }
+
+            .symbols-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mantra {
+                font-size: 40px;
+            }
+
+            .mantra-om {
+                font-size: 75px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                ॐ <span>MAHADEV</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="home.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About Shiva</a>
+                </li>
+
+                <li>
+                    <a href="story.html">Stories</a>
+                </li>
+
+                <li>
+                    <a href="temples.html">Temples</a>
+                </li>
+
+                <li>
+                    <a href="gallery.html">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="mantras.html">Mantras</a>
+                </li>
+
+            </ul>
+
+            <a href="story.html" class="nav-btn">
+                Begin Journey
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="about-hero">
+
+        <div class="hero-content">
+
+            <div class="om">
+                ॐ
+            </div>
+
+            <div class="hero-small">
+                THE ETERNAL CONSCIOUSNESS
+            </div>
+
+            <h1 class="hero-title">
+                MAHADEV
+            </h1>
+
+            <div class="vibhuti">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <h2 class="hero-subtitle">
+                The One Beyond Time
+            </h2>
+
+            <p class="hero-text">
+
+                Shiva is stillness and movement,
+                destruction and creation,
+                silence and the infinite sound of existence.
+
+                He is Mahadev — the great consciousness
+                that exists beyond beginning and end.
+
+            </p>
+
+        </div>
+
+
+        <div class="mountains">
+
+            <img
+                src="images/Misty Translucent Himalayan Panorama.png"
+                alt="Himalayan Mountains">
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WHO IS SHIVA ================= -->
+
+    <section class="who-section">
+
+        <div class="who-container">
+
+
+            <div class="who-content">
+
+                <div class="section-label">
+                    KNOW MAHADEV
+                </div>
+
+                <h2 class="section-title">
+                    Who Is<br>
+                    Lord Shiva?
+                </h2>
+
+                <div class="vibhuti">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <p class="who-text">
+
+                    Lord Shiva is one of the principal deities
+                    of Hinduism and is known as Mahadev,
+                    the Great God.
+
+                </p>
+
+                <p class="who-text">
+
+                    He represents transformation, meditation,
+                    detachment and the eternal nature of
+                    consciousness.
+
+                </p>
+
+                <p class="who-text">
+
+                    Shiva is often portrayed meditating in the
+                    Himalayas, surrounded by silence and
+                    nature. His form reminds us that true
+                    strength can exist in stillness.
+
+                </p>
+
+            </div>
+
+
+            <div class="shiva-image-box">
+
+                <img
+                    src="images/shiva.png"
+                    alt="Lord Shiva"
+                    class="shiva-image">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SYMBOLS ================= -->
+
+    <section class="symbols-section">
+
+        <div class="section-label">
+            THE SYMBOLS OF MAHADEV
+        </div>
+
+        <h2 class="section-title">
+            Every Symbol Has A Meaning
+        </h2>
+
+
+        <div class="symbols-container">
+
+
+            <div class="symbol">
+
+                <div class="symbol-icon">
+                    🔱
+                </div>
+
+                <h3>Trishul</h3>
+
+                <p>
+                    The three-pronged trident represents
+                    creation, preservation and transformation.
+                </p>
+
+            </div>
+
+
+            <div class="symbol">
+
+                <div class="symbol-icon">
+                    ☾
+                </div>
+
+                <h3>Crescent Moon</h3>
+
+                <p>
+                    The moon represents time, calmness
+                    and the control of the mind.
+                </p>
+
+            </div>
+
+
+            <div class="symbol">
+
+                <div class="symbol-icon">
+                    🐍
+                </div>
+
+                <h3>Vasuki</h3>
+
+                <p>
+                    The serpent around Shiva's neck
+                    represents fearlessness and mastery.
+                </p>
+
+            </div>
+
+
+            <div class="symbol">
+
+                <div class="symbol-icon">
+                    ◉
+                </div>
+
+                <h3>Third Eye</h3>
+
+                <p>
+                    Shiva's third eye represents wisdom,
+                    awareness and destruction of ignorance.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FORM OF SHIVA ================= -->
+
+    <section class="form-section">
+
+        <div class="form-container">
+
+            <div class="section-label">
+                THE FORM OF MAHADEV
+            </div>
+
+            <h2 class="form-title">
+                A Form Filled With Meaning
+            </h2>
+
+
+            <div class="form-grid">
+
+
+                <div class="form-item">
+
+                    <span>01</span>
+
+                    <h3>Jata</h3>
+
+                </div>
+
+
+                <div class="form-item">
+
+                    <span>02</span>
+
+                    <h3>Ganga</h3>
+
+                </div>
+
+
+                <div class="form-item">
+
+                    <span>03</span>
+
+                    <h3>Moon</h3>
+
+                </div>
+
+
+                <div class="form-item">
+
+                    <span>04</span>
+
+                    <h3>Vasuki</h3>
+
+                </div>
+
+
+                <div class="form-item">
+
+                    <span>05</span>
+
+                    <h3>Trishul</h3>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MANTRA ================= -->
+
+    <section class="mantra-section">
+
+        <div>
+
+            <div class="mantra-om">
+                ॐ
+            </div>
+
+            <div class="vibhuti">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </div>
+
+            <h2 class="mantra">
+                ॐ नमः शिवाय
+            </h2>
+
+            <p class="mantra-meaning">
+                Om Namah Shivaya — Salutations to Shiva
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            ॐ MAHADEV
+        </div>
+
+        <p>
+            Har Har Mahadev • Om Namah Shivaya
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

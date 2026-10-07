@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mahadev</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        .navbar {
+            
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 18px 50px;
+
+            background: #eaf8ff;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #2196c8;
+        }
+
+        .logo span {
+            margin-left: 5px;
+            color: #172b3a;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #172b3a;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #2196c8;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            background-color: #2196c8;
+            color: white;
+
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+
+            overflow: hidden;
+
+            background: #eaf8ff;
+        }
+
+        /* ================= HIMALAYAS ================= */
+
+        .himalayas-block {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            z-index: 1;
+        }
+
+        .himalayas-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: bottom center;
+
+            opacity: 0.75;
+            display: block;
+        }
+
+        /* .himalayas-block::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background: linear-gradient(
+                to bottom,
+                rgba(234, 248, 255, 0.2),
+                rgba(234, 248, 255, 0.1),
+                rgba(234, 248, 255, 0.4)
+            );
+        } */
+
+        /* ================= SHIVA IMAGE ================= */
+
+        .shiva-section {
+            position: absolute;
+
+            left: 5%;
+            bottom: 0;
+
+            width: 45%;
+            height: 80%;
+
+            z-index: 3;
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .shiva-image {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+            object-position: bottom center;
+
+            filter: drop-shadow(0 10px 30px rgba(33, 150, 200, 0.25));
+        }
+
+        /* ================= MANTRA ================= */
+
+        .mantra-section {
+            position: absolute;
+
+            right: 7%;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 45%;
+
+            z-index: 4;
+
+            text-align: center;
+        }
+
+        .om-symbol {
+            font-size: 70px;
+
+            color: #2196c8;
+
+            font-family: Georgia, serif;
+
+            margin-bottom: 10px;
+
+            text-shadow: 0 5px 20px rgba(33, 150, 200, 0.25);
+        }
+
+        .mantra {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 55px;
+
+            color: #176b91;
+
+            letter-spacing: 4px;
+
+            line-height: 1.3;
+
+            text-shadow:
+                0 3px 10px rgba(255,255,255,0.8);
+        }
+
+        .mantra-english {
+            margin-top: 15px;
+
+            font-family: Georgia, serif;
+
+            font-size: 22px;
+
+            letter-spacing: 5px;
+
+            color: #f28c28;
+
+            font-style: italic;
+        }
+
+        .vibhuti-lines {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 6px;
+
+            width: 100px;
+
+            margin: 25px auto;
+        }
+
+        .vibhuti-lines span {
+            height: 5px;
+
+            border-radius: 10px;
+
+            background: #ffffff;
+
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+        }
+
+        .mantra-quote {
+            font-family: Georgia, serif;
+
+            font-size: 18px;
+
+            color: #334155;
+
+            line-height: 1.7;
+        }
+
+        /* ================= RESPONSIVE =================
+
+        @media (max-width: 900px) {
+
+            .navbar {
+                padding: 15px 25px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                height: 100vh;
+            }
+
+            .shiva-section {
+                left: 0;
+                width: 55%;
+                height: 65%;
+            }
+
+            .mantra-section {
+                right: 3%;
+                width: 50%;
+            }
+
+            .mantra {
+                font-size: 38px;
+            }
+
+            .om-symbol {
+                font-size: 50px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero {
+                height: 100vh;
+            }
+
+            .shiva-section {
+                left: 0;
+                bottom: 0;
+
+                width: 100%;
+                height: 50%;
+
+                opacity: 0.35;
+            }
+
+            .mantra-section {
+                right: 0;
+                top: 52%;
+
+                width: 100%;
+                padding: 20px;
+            }
+
+            .mantra {
+                font-size: 32px;
+            }
+
+            .mantra-english {
+                font-size: 16px;
+            }
+        } */
+
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                ॐ <span>MAHADEV</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutshiva.html">About Shiva</a></li>
+                <li><a href="#stories">Stories</a></li>
+                <li><a href="#temples">Temples</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#mantras">Mantras</a></li>
+            </ul>
+
+            <a href="#journey" class="nav-btn">
+                Begin Journey
+            </a>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="hero">
+
+            <!-- HIMALAYAS BACKGROUND -->
+
+            <div class="himalayas-block">
+
+                <img
+                    src="Misty Translucent Himalayan Panorama.png"
+                    alt="Himalayas"
+                    class="himalayas-image"
+                >
+
+            </div>
+
+
+            <!-- SHIVA IMAGE LEFT -->
+
+            <div class="shiva-section">
+
+                <img
+                    src="shiva.png"
+                    alt="Lord Shiva"
+                    class="shiva-image"
+                >
+
+            </div>
+
+
+            <!-- MANTRA RIGHT -->
+
+            <div class="mantra-section">
+
+                <div class="om-symbol">
+                    ॐ
+                </div>
+
+                <h1 class="mantra">
+                    ॐ नमः शिवाय
+                </h1>
+
+                <div class="vibhuti-lines">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <p class="mantra-english">
+                    OM NAMAH SHIVAYA
+                </p>
+
+                <p class="mantra-quote">
+                    "I bow to the divine consciousness<br>
+                    that resides within all."
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
