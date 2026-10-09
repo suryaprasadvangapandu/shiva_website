@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mahadev | Divine Stories</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap');
+
+        :root {
+            --sky: #eaf8ff;
+            --blue: #2196c8;
+            --deep-blue: #176b91;
+            --navy: #172b3a;
+            --orange: #f28c28;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.65);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: var(--navy);
+            background: var(--sky);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button,
+        input {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        /* NAVIGATION */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            padding: 18px 5%;
+            background: rgba(234, 248, 255, 0.92);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(33, 150, 200, 0.15);
+            box-shadow: 0 5px 25px rgba(23, 107, 145, 0.06);
+        }
+
+        .logo {
+            flex-shrink: 0;
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--blue);
+        }
+
+        .logo span {
+            margin-left: 5px;
+            color: var(--navy);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--blue);
+        }
+
+        .nav-btn {
+            padding: 11px 20px;
+            color: white;
+            background: var(--blue);
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            min-height: 510px;
+            padding: 85px 20px 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            background:
+                radial-gradient(ellipse at 50% 100%,
+                    rgba(33, 150, 200, 0.24), transparent 55%),
+                linear-gradient(180deg, #eaf8ff 0%, #d6effa 65%, #c0e3f3 100%);
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            left: -10%;
+            width: 120%;
+            height: 220px;
+            bottom: -90px;
+            background: linear-gradient(145deg, #b5d8e8, #eefaff);
+            clip-path: polygon(0 75%, 12% 35%, 22% 62%, 35% 15%,
+                47% 65%, 59% 25%, 71% 60%, 84% 20%, 100% 70%,
+                100% 100%, 0 100%);
+        }
+
+        .hero::after {
+            bottom: -130px;
+            left: -5%;
+            opacity: 0.7;
+            transform: scaleX(-1);
+            background: linear-gradient(180deg, #c4e6f5, #eaf8ff);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 9px 17px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(33, 150, 200, 0.3);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.45);
+            color: var(--deep-blue);
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .hero-om {
+            color: var(--blue);
+            font-family: Georgia, serif;
+            font-size: 65px;
+            margin-bottom: 10px;
+            text-shadow: 0 8px 30px rgba(33, 150, 200, 0.2);
+            animation: glow 3s infinite alternate;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: clamp(35px, 6vw, 67px);
+            color: var(--deep-blue);
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: auto;
+            color: #456577;
+            font-family: Georgia, serif;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 32px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            border-radius: 30px;
+            padding: 14px 24px;
+            font-size: 13px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            color: white;
+            background: var(--blue);
+            border: 1px solid var(--blue);
+            box-shadow: 0 8px 20px rgba(33, 150, 200, 0.2);
+        }
+
+        .secondary-btn {
+            color: var(--deep-blue);
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(33, 150, 200, 0.35);
+        }
+
+        .primary-btn:hover,
+        .secondary-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* FLOATING DECORATIONS */
+
+        .floating-symbol {
+            position: absolute;
+            color: rgba(33, 150, 200, 0.16);
+            font-family: Georgia, serif;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .symbol-one {
+            top: 15%;
+            left: 12%;
+            font-size: 65px;
+        }
+
+        .symbol-two {
+            right: 13%;
+            top: 24%;
+            font-size: 45px;
+            animation-delay: -2s;
+        }
+
+        .symbol-three {
+            left: 22%;
+            bottom: 20%;
+            font-size: 32px;
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 5px 15px rgba(33, 150, 200, 0.15); }
+            to { text-shadow: 0 5px 35px rgba(33, 150, 200, 0.45); }
+        }
+
+        /* COMMON SECTIONS */
+
+        .section {
+            padding: 75px 6%;
+        }
+
+        .section-heading {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-heading .small-title {
+            color: var(--orange);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            margin-top: 12px;
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: clamp(27px, 4vw, 39px);
+            color: var(--deep-blue);
+        }
+
+        .section-heading p {
+            margin: 13px auto 0;
+            max-width: 600px;
+            color: #607887;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* STORY CONTROLS */
+
+        .story-library {
+            background: linear-gradient(180deg, #f5fcff, #eaf8ff);
+        }
+
+        .story-controls {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1250px;
+            margin: 0 auto 35px;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1 1 250px;
+            max-width: 360px;
+        }
+
+        .search-box span {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            color: var(--blue);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 15px 14px 45px;
+            border: 1px solid rgba(33, 150, 200, 0.2);
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            color: var(--navy);
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--blue);
+            box-shadow: 0 0 0 4px rgba(33, 150, 200, 0.09);
+        }
+
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .filter-btn {
+            padding: 11px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(33, 150, 200, 0.23);
+            color: #456577;
+            background: white;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: white;
+            background: var(--blue);
+            border-color: var(--blue);
+        }
+
+        /* STORY CARDS */
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .story-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 28px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.76);
+            border: 1px solid rgba(33, 150, 200, 0.15);
+            box-shadow: 0 8px 25px rgba(23, 107, 145, 0.05);
+            transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+        }
+
+        .story-card::before {
+            content: "";
+            position: absolute;
+            height: 4px;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--blue), #9bdcf3, var(--orange));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s;
+        }
+
+        .story-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(33, 150, 200, 0.35);
+            box-shadow: 0 18px 35px rgba(23, 107, 145, 0.12);
+        }
+
+        .story-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .story-icon {
+            width: 62px;
+            height: 62px;
+            display: grid;
+            place-items: center;
+            border-radius: 18px;
+            color: var(--deep-blue);
+            background: linear-gradient(145deg, #e1f5ff, #f5fcff);
+            border: 1px solid rgba(33, 150, 200, 0.12);
+            font-size: 31px;
+            transition: transform 0.4s;
+        }
+
+        .story-card:hover .story-icon {
+            transform: rotate(-7deg) scale(1.08);
+        }
+
+        .category-tag {
+            padding: 7px 11px;
+            border-radius: 20px;
+            color: var(--deep-blue);
+            background: #e6f6fd;
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 0.6px;
+        }
+
+        .story-card h3 {
+            color: var(--navy);
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: 20px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .story-card .summary {
+            flex: 1;
+            color: #607887;
+            font-size: 13px;
+            line-height: 1.9;
+        }
+
+        .card-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 24px;
+            padding-top: 17px;
+            border-top: 1px solid rgba(33, 150, 200, 0.12);
+        }
+
+        .reading-time {
+            color: #7b909b;
+            font-size: 11px;
+        }
+
+        .read-btn {
+            border: none;
+            background: transparent;
+            color: var(--blue);
+            font-weight: bold;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .read-btn:hover {
+            color: var(--orange);
+            transform: translateX(3px);
+        }
+
+        .empty-state {
+            display: none;
+            text-align: center;
+            padding: 45px 20px;
+            color: #607887;
+            grid-column: 1 / -1;
+        }
+
+        /* STORY READER MODAL */
+
+        .story-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(15, 39, 55, 0.58);
+            backdrop-filter: blur(8px);
+        }
+
+        .story-modal.open {
+            display: flex;
+            animation: fadeIn 0.25s ease;
+        }
+
+        .modal-content {
+            position: relative;
+            width: min(700px, 100%);
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 45px;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            background:
+                radial-gradient(ellipse at top right, rgba(33, 150, 200, 0.12), transparent 45%),
+                #f5fcff;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+            animation: modalUp 0.3s ease;
+        }
+
+        .close-modal {
+            position: absolute;
+            right: 20px;
+            top: 18px;
+            width: 38px;
+            height: 38px;
+            border: 1px solid rgba(33, 150, 200, 0.2);
+            border-radius: 50%;
+            color: var(--deep-blue);
+            background: white;
+            font-size: 22px;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            color: white;
+            background: var(--blue);
+            transform: rotate(90deg);
+        }
+
+        .modal-icon {
+            font-size: 43px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content h2 {
+            padding-right: 20px;
+            margin-bottom: 18px;
+            color: var(--deep-blue);
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: clamp(24px, 4vw, 34px);
+            line-height: 1.5;
+        }
+
+        .modal-story-text {
+            color: #425e6e;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            line-height: 2;
+            white-space: pre-line;
+        }
+
+        .story-moral {
+            margin-top: 28px;
+            padding: 20px;
+            border-left: 4px solid var(--orange);
+            border-radius: 0 12px 12px 0;
+            background: rgba(242, 140, 40, 0.09);
+            color: #80531f;
+            line-height: 1.8;
+            font-size: 13px;
+        }
+
+        .story-moral strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #b46b19;
+            letter-spacing: 1px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes modalUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* DIVINE THOUGHT */
+
+        .thought-section {
+            position: relative;
+            padding: 85px 20px;
+            text-align: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #d7effa, #f5fcff, #dceff9);
+        }
+
+        .thought-section::before,
+        .thought-section::after {
+            content: "ॐ";
+            position: absolute;
+            color: rgba(33, 150, 200, 0.07);
+            font-family: Georgia, serif;
+            font-size: 190px;
+            pointer-events: none;
+        }
+
+        .thought-section::before {
+            top: -45px;
+            left: 3%;
+        }
+
+        .thought-section::after {
+            right: 3%;
+            bottom: -60px;
+        }
+
+        .thought-content {
+            position: relative;
+            z-index: 1;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .thought-symbol {
+            font-size: 38px;
+            color: var(--orange);
+            margin-bottom: 18px;
+        }
+
+        .thought-content h2 {
+            color: var(--deep-blue);
+            font-family: 'Cinzel', Georgia, serif;
+            font-size: clamp(24px, 4vw, 36px);
+            margin-bottom: 25px;
+        }
+
+        .thought-text {
+            min-height: 75px;
+            color: #456577;
+            font-family: Georgia, serif;
+            font-size: 20px;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .thought-source {
+            margin-top: 13px;
+            color: var(--orange);
+            font-size: 12px;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        .thought-next {
+            margin-top: 25px;
+            padding: 12px 22px;
+            border-radius: 25px;
+            border: 1px solid var(--blue);
+            background: transparent;
+            color: var(--deep-blue);
+            font-size: 12px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .thought-next:hover {
+            background: var(--blue);
+            color: white;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 45px 6% 25px;
+            text-align: center;
+            color: #d9edf7;
+            background: #142e40;
+        }
+
+        .footer-om {
+            color: #80d3f4;
+            font-size: 38px;
+            margin-bottom: 8px;
+        }
+
+        footer h3 {
+            font-family: 'Cinzel', Georgia, serif;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            max-width: 550px;
+            margin: auto;
+            color: #a8c6d5;
+            font-size: 12px;
+            line-height: 1.9;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 23px;
+            margin: 24px 0;
+            font-size: 12px;
+        }
+
+        .footer-links a:hover {
+            color: #80d3f4;
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 11px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .navbar {
+                padding: 16px 4%;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .nav-btn {
+                padding: 10px 14px;
+                font-size: 11px;
+            }
+
+            .story-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            .navbar {
+                flex-wrap: wrap;
+                gap: 15px;
+                padding: 15px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .nav-btn {
+                margin-left: auto;
+            }
+
+            .nav-links {
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 20px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 480px;
+                padding: 70px 22px 95px;
+            }
+
+            .hero-om {
+                font-size: 52px;
+            }
+
+            .hero h1 {
+                letter-spacing: 1px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .symbol-one {
+                left: 2%;
+                font-size: 42px;
+            }
+
+            .symbol-two {
+                right: 3%;
+                font-size: 32px;
+            }
+
+            .section {
+                padding: 55px 5%;
+            }
+
+            .story-controls {
+                align-items: stretch;
+            }
+
+            .search-box {
+                max-width: none;
+            }
+
+            .filters {
+                justify-content: center;
+            }
+
+            .filter-btn {
+                padding: 10px 13px;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .story-card {
+                padding: 24px;
+            }
+
+            .modal-content {
+                padding: 35px 24px;
+            }
+
+            .thought-text {
+                font-size: 17px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="logo">ॐ <span>MAHADEV</span></a>
+
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutshiva.html">About Shiva</a></li>
+                <li><a href="story.html" class="active">Stories</a></li>
+                <li><a href="temples.html">Temples</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="mantras.html">Mantras</a></li>
+            </ul>
+
+            <a href="#stories" class="nav-btn">Explore Stories ↗</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+
+    <main>
+        <section class="hero">
+            <span class="floating-symbol symbol-one">ॐ</span>
+            <span class="floating-symbol symbol-two">✧</span>
+            <span class="floating-symbol symbol-three">🔱</span>
+
+            <div class="hero-content">
+                <span class="eyebrow">THE DIVINE CHRONICLES</span>
+
+                <div class="hero-om">ॐ</div>
+
+                <h1>Stories of Mahadev</h1>
+
+                <p>
+                    Journey into the timeless legends of Lord Shiva.
+                    Discover stories of divine power, boundless compassion,
+                    cosmic balance, and the wisdom that illuminates the soul.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#stories" class="primary-btn">✦ Discover Stories</a>
+                    <a href="#divine-thought" class="secondary-btn">☼ Divine Wisdom</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY LIBRARY -->
+
+        <section class="section story-library" id="stories">
+
+            <div class="section-heading">
+                <span class="small-title">Sacred Narratives</span>
+                <h2>Explore the Divine Tales</h2>
+                <p>
+                    Every legend carries a deeper meaning.
+                    Choose a story, open its wisdom, and let the journey begin.
+                </p>
+            </div>
+
+            <div class="story-controls">
+
+                <div class="search-box">
+                    <span>⌕</span>
+                    <input
+                        type="search"
+                        id="storySearch"
+                        placeholder="Search divine stories..."
+                        aria-label="Search divine stories"
+                    >
+                </div>
+
+                <div class="filters" aria-label="Filter stories by category">
+                    <button class="filter-btn active" data-filter="all">All Stories</button>
+                    <button class="filter-btn" data-filter="cosmic">Cosmic Legends</button>
+                    <button class="filter-btn" data-filter="devotion">Devotion</button>
+                    <button class="filter-btn" data-filter="wisdom">Divine Wisdom</button>
+                </div>
+
+            </div>
+
+            <div class="story-grid" id="storyGrid">
+
+                <!-- STORY 1 -->
+
+                <article class="story-card" data-category="cosmic">
+                    <div class="card-top">
+                        <div class="story-icon">🌊</div>
+                        <span class="category-tag">COSMIC LEGEND</span>
+                    </div>
+
+                    <h3>The Neelkanth: The Blue-Throated Lord</h3>
+
+                    <p class="summary">
+                        Discover how Shiva drank the deadly poison that emerged
+                        during the churning of the cosmic ocean to protect all
+                        creation from destruction.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span class="reading-time">◷ 3 min read</span>
+                        <button class="read-btn" data-story="neelkanth">Read Story ↗</button>
+                    </div>
+                </article>
+
+                <!-- STORY 2 -->
+
+                <article class="story-card" data-category="devotion">
+                    <div class="card-top">
+                        <div class="story-icon">🌙</div>
+                        <span class="category-tag">DIVINE LOVE</span>
+                    </div>
+
+                    <h3>Shiva and Parvati: A Sacred Union</h3>
+
+                    <p class="summary">
+                        Explore the story of Parvati's unwavering devotion
+                        and the sacred union that represents harmony between
+                        complementary cosmic energies.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span class="reading-time">◷ 3 min read</span>
+                        <button class="read-btn" data-story="parvati">Read Story ↗</button>
+                    </div>
+                </article>
+
+                <!-- STORY 3 -->
+
+                <article class="story-card" data-category="cosmic">
+                    <div class="card-top">
+                        <div class="story-icon">🔥</div>
+                        <span class="category-tag">COSMIC LEGEND</span>
+                    </div>
+
+                    <h3>The Infinite Pillar of Light</h3>
+
+                    <p class="summary">
+                        Witness the legend of the boundless Jyotirlinga,
+                        revealing that the supreme reality has neither
+                        beginning nor end.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span class="reading-time">◷ 3 min read</span>
+                        <button class="read-btn" data-story="jyotirlinga">Read Story ↗</button>
+                    </div>
+                </article>
+
+                <!-- STORY 4 -->
+
+                <article class="story-card" data-category="devotion">
+                    <div class="card-top">
+                        <div class="story-icon">🐘</div>
+                        <span class="category-tag">DIVINE FAMILY</span>
+                    </div>
+
+                    <h3>The Birth of Lord Ganesha</h3>
+
+                    <p class="summary">
+                        Learn about Goddess Parvati, the birth of Ganesha,
+                        and the story behind the beloved elephant-headed
+                        deity worshipped as the remover of obstacles.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span class="reading-time">◷ 4 min read</span>
+                        <button class="read-btn" data-story="ganesha">Read Story ↗</button>
+                    </div>
+                </article>
+
+                <!-- STORY 5 -->
+
+                <article class="story-card" data-category="wisdom">
+                    <div class="card-top">
+                        <div class="story-icon">🔱</div>
+                        <span class="category-tag">DIVINE WISDOM</span>
+                    </div>
+
+                    <h3>Shiva as Nataraja: The Cosmic Dance</h3>
+
+                    <p class="summary">
+                        Discover the symbolism of Shiva's cosmic dance,
+                        representing creation, preservation, transformation,
+                        and the rhythm of existence.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span class="reading-time">◷ 3 min read</span>
+                        <button class="read-btn" data-story="nataraja">Read Story ↗</button>
+                    </div>
+                </article>
+
+                <!-- STORY 6 -->
+
+                <article class="story-card" data-category="wisdom">
+                    <div class="card-top">
+                        <div class="story-icon">🕉️</div>
+                        <span class="category-tag">SPIRITUAL WISDOM</span>
+                    </div>
+
+                    <h3>The Meaning of Om Namah Shivaya</h3>
+
+                    <p class="summary">
+                        Understand the spiritual significance of this sacred
+                        mantra and its association with humility, devotion,
+                        inner peace, and consciousness.
+                    </p>
+
+                    <div class="card-bottom">
+                        <span class="reading-time">◷ 2 min read</span>
+                        <button class="read-btn" data-story="mantra">Read Story ↗</button>
+                    </div>
+                </article>
+
+                <div class="empty-state" id="emptyState">
+                    <div style="font-size: 38px; margin-bottom: 12px;">ॐ</div>
+                    <h3>No stories found</h3>
+                    <p style="margin-top: 8px;">Try another search or select a different category.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- DIVINE THOUGHT -->
+
+        <section class="thought-section" id="divine-thought">
+            <div class="thought-content">
+
+                <div class="thought-symbol">✧</div>
+
+                <h2>A Moment of Divine Wisdom</h2>
+
+                <p class="thought-text" id="thoughtText">
+                    "Let go of what no longer serves you.
+                    In transformation, discover the freedom to begin again."
+                </p>
+
+                <p class="thought-source" id="thoughtSource">
+                    A REFLECTION ON SHIVA
+                </p>
+
+                <button class="thought-next" id="nextThought">
+                    Discover Another Thought ↗
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="footer-om">ॐ</div>
+
+        <h3>MAHADEV</h3>
+
+        <p>
+            A humble space to explore the sacred stories, timeless traditions,
+            and spiritual wisdom associated with Lord Shiva.
+        </p>
+
+        <div class="footer-links">
+            <a href="home.html">Home</a>
+            <a href="aboutshiva.html">About Shiva</a>
+            <a href="story.html">Stories</a>
+            <a href="temples.html">Temples</a>
+            <a href="mantras.html">Mantras</a>
+        </div>
+
+        <p class="copyright">
+            ॐ नमः शिवाय · Created with devotion · Har Har Mahadev
+        </p>
+    </footer>
+
+    <!-- INTERACTIVE STORY MODAL -->
+
+    <div
+        class="story-modal"
+        id="storyModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalTitle"
+        aria-hidden="true"
+    >
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeModal" aria-label="Close story">
+                &times;
+            </button>
+
+            <div class="modal-icon" id="modalIcon">ॐ</div>
+
+            <h2 id="modalTitle">Divine Story</h2>
+
+            <div class="modal-story-text" id="modalText"></div>
+
+            <div class="story-moral">
+                <strong>✧ THE WISDOM ✧</strong>
+                <p id="modalMoral"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // DIVINE STORIES
+        // These summaries are inspired by traditional Hindu narratives.
+        // Details can vary across scriptures and regional traditions.
+
+        const stories = {
+            neelkanth: {
+                icon: "🌊",
+                title: "The Neelkanth: The Blue-Throated Lord",
+                text: `In Hindu tradition, the devas and asuras joined in the Samudra Manthan, the churning of the cosmic ocean, seeking the nectar of immortality.
+
+During this extraordinary event, a terrible poison known as Halahala emerged. Its destructive power threatened the worlds, and the gathered beings sought help.
+
+Moved by compassion for all creation, Lord Shiva accepted the poison and held it in his throat. Goddess Parvati is traditionally said to have restrained it from descending further into his body.
+
+His throat turned blue, and Shiva became known as Neelkanth, the Blue-Throated One.
+
+This story celebrates Shiva as a protector who accepts suffering to preserve the welfare of the universe.`,
+                moral: "True strength is not merely power. It is the willingness to protect others with courage, compassion, and selflessness."
+            },
+
+            parvati: {
+                icon: "🌙",
+                title: "Shiva and Parvati: A Sacred Union",
+                text: `According to Hindu traditions, Goddess Parvati was devoted to Lord Shiva and undertook deep spiritual discipline to win his acceptance.
+
+Her determination represented not simply the desire for a divine marriage, but the power of dedication, patience, and inner strength.
+
+Shiva eventually accepted Parvati, and their union became a profound symbol in Hindu thought. Together, they represent complementary aspects of existence: consciousness and energy, stillness and dynamism.
+
+Their relationship is also celebrated as an example of companionship, devotion, and the balance of different qualities.
+
+Through this sacred union, Shiva and Parvati are remembered not only as divine beings, but also as symbols of cosmic harmony.`,
+                moral: "Patience, devotion, and inner strength can guide us through difficult journeys. Harmony grows when different strengths work together."
+            },
+
+            jyotirlinga: {
+                icon: "🔥",
+                title: "The Infinite Pillar of Light",
+                text: `A celebrated Hindu legend describes a dispute between Brahma and Vishnu about who was supreme.
+
+To reveal the limits of their claims, an immeasurable pillar of light appeared before them. Neither its beginning nor its end could be seen.
+
+Vishnu took the form of a boar and travelled downward in search of its base. Brahma travelled upward in search of its summit.
+
+Despite their efforts, neither could discover the limits of the radiant pillar.
+
+The legend presents Shiva as the infinite reality beyond ordinary measures of time, distance, and form. The manifestation of this boundless light is associated with the sacred Jyotirlinga tradition.
+
+The story invites devotees to approach the divine with humility rather than pride.`,
+                moral: "The search for truth begins with humility. Some realities are greater than our ability to measure or fully comprehend."
+            },
+
+            ganesha: {
+                icon: "🐘",
+                title: "The Birth of Lord Ganesha",
+                text: `One widely told Hindu account describes how Goddess Parvati created a guardian while preparing for her bath. She instructed him not to allow anyone to enter.
+
+When Lord Shiva arrived, the guardian, who did not recognize him, followed Parvati's instructions and refused him entry. A conflict followed.
+
+When the truth became clear, Shiva restored the guardian to life with the head of an elephant. The child became known as Ganesha and was embraced as the son of Shiva and Parvati.
+
+Ganesha came to be revered as the remover of obstacles, the patron of learning, and the deity traditionally invoked before new beginnings.
+
+Different Hindu traditions tell this story with variations in detail.`,
+                moral: "The story encourages us to seek understanding, act with care, and approach every new beginning with wisdom and humility."
+            },
+
+            nataraja: {
+                icon: "🔱",
+                title: "Shiva as Nataraja: The Cosmic Dance",
+                text: `Lord Shiva is celebrated as Nataraja, the Lord of Dance. His cosmic dance is one of the most recognized symbols in Hindu religious art and philosophy.
+
+The surrounding ring of fire represents the universe and its dynamic cycles. The drum in one hand symbolizes creation, while the fire in another represents destruction and transformation.
+
+One hand offers reassurance, while the raised foot is associated with liberation. The figure beneath his foot symbolizes ignorance overcome through divine wisdom.
+
+The dance is not simply a performance. It represents a universe that is continually moving through cycles of creation, preservation, transformation, and renewal.
+
+Nataraja reminds devotees that change is an inseparable part of existence.`,
+                moral: "Life is always changing. Wisdom comes from meeting change with awareness and learning to move forward without being ruled by fear."
+            },
+
+            mantra: {
+                icon: "🕉️",
+                title: "The Meaning of Om Namah Shivaya",
+                text: `Om Namah Shivaya is one of the most beloved mantras associated with Lord Shiva.
+
+It is commonly understood as "I bow to Shiva" or "I bow to the auspicious one." The mantra expresses reverence, surrender, and a desire to turn one's attention toward the divine.
+
+The five syllables of Namah Shivaya are traditionally associated with the five elements: earth, water, fire, air, and space. Interpretations differ across spiritual lineages.
+
+For many devotees, repeating the mantra is a practice of prayer and meditation. Its steady rhythm can help bring attention away from everyday distractions and toward a sense of inner stillness.
+
+The mantra is often recited as an expression of faith, gratitude, and spiritual dedication.`,
+                moral: "A quiet mind, a sincere heart, and regular reflection can help cultivate patience, gratitude, and inner peace."
+            }
+        };
+
+        // STORY SEARCH AND CATEGORY FILTERS
+
+        const searchInput = document.getElementById("storySearch");
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const storyCards = document.querySelectorAll(".story-card");
+        const emptyState = document.getElementById("emptyState");
+
+        let activeCategory = "all";
+
+        function filterStories() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            storyCards.forEach(card => {
+                const category = card.dataset.category;
+                const matchesCategory =
+                    activeCategory === "all" || category === activeCategory;
+
+                const matchesSearch =
+                    card.textContent.toLowerCase().includes(query);
+
+                const visible = matchesCategory && matchesSearch;
+
+                card.style.display = visible ? "flex" : "none";
+
+                if (visible) {
+                    visibleCount++;
+                }
+            });
+
+            emptyState.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        searchInput.addEventListener("input", filterStories);
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", () => {
+                filterButtons.forEach(item => item.classList.remove("active"));
+
+                button.classList.add("active");
+                activeCategory = button.dataset.filter;
+
+                filterStories();
+            });
+        });
+
+        // OPEN AND CLOSE STORY READER
+
+        const storyModal = document.getElementById("storyModal");
+        const closeModal = document.getElementById("closeModal");
+        const modalIcon = document.getElementById("modalIcon");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalText = document.getElementById("modalText");
+        const modalMoral = document.getElementById("modalMoral");
+
+        let lastFocusedElement = null;
+
+        function openStory(storyKey) {
+            const story = stories[storyKey];
+
+            if (!story) return;
+
+            lastFocusedElement = document.activeElement;
+
+            modalIcon.textContent = story.icon;
+            modalTitle.textContent = story.title;
+            modalText.textContent = story.text;
+            modalMoral.textContent = story.moral;
+
+            storyModal.classList.add("open");
+            storyModal.setAttribute("aria-hidden", "false");
+            document.body.style.overflow = "hidden";
+
+            closeModal.focus();
+        }
+
+        function hideStory() {
+            storyModal.classList.remove("open");
+            storyModal.setAttribute("aria-hidden", "true");
+            document.body.style.overflow = "";
+
+            if (lastFocusedElement) {
+                lastFocusedElement.focus();
+            }
+        }
+
+        document.querySelectorAll(".read-btn").forEach(button => {
+            button.addEventListener("click", () => {
+                openStory(button.dataset.story);
+            });
+        });
+
+        closeModal.addEventListener("click", hideStory);
+
+        storyModal.addEventListener("click", event => {
+            if (event.target === storyModal) {
+                hideStory();
+            }
+        });
+
+        document.addEventListener("keydown", event => {
+            if (event.key === "Escape" && storyModal.classList.contains("open")) {
+                hideStory();
+            }
+        });
+
+        // ROTATING DIVINE THOUGHTS
+        // These are original reflections, not direct scriptural quotations.
+
+        const thoughts = [
+            {
+                text: '"Let go of what no longer serves you. In transformation, discover the freedom to begin again."',
+                source: "A REFLECTION ON SHIVA"
+            },
+            {
+                text: '"In the silence of the mind, there is room to listen to the wisdom within."',
+                source: "A MOMENT OF STILLNESS"
+            },
+            {
+                text: '"Courage is not the absence of fear, but the willingness to walk forward with awareness."',
+                source: "A REFLECTION ON INNER STRENGTH"
+            },
+            {
+                text: '"Every ending carries the possibility of a new beginning. Change is part of the journey."',
+                source: "A REFLECTION ON TRANSFORMATION"
+            },
+            {
+                text: '"Approach life with a humble heart, a steady mind, and compassion for every living being."',
+                source: "A REFLECTION ON COMPASSION"
+            }
+        ];
+
+        let thoughtIndex = 0;
+
+        const thoughtText = document.getElementById("thoughtText");
+        const thoughtSource = document.getElementById("thoughtSource");
+        const nextThought = document.getElementById("nextThought");
+
+        nextThought.addEventListener("click", () => {
+            thoughtIndex = (thoughtIndex + 1) % thoughts.length;
+
+            thoughtText.style.opacity = "0";
+
+            setTimeout(() => {
+                thoughtText.textContent = thoughts[thoughtIndex].text;
+                thoughtSource.textContent = thoughts[thoughtIndex].source;
+                thoughtText.style.opacity = "1";
+            }, 180);
+        });
+
+        thoughtText.style.transition = "opacity 0.18s ease";
+
+    </script>
+
+</body>
+</html>
