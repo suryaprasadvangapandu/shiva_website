@@ -649,12 +649,7 @@
             bottom: -60px;
         }
 
-        .thought-content {
-            position: relative;
-            z-index: 1;
-            max-width: 750px;
-            margin: auto;
-        }
+        
 
         .thought-symbol {
             font-size: 38px;
@@ -1422,7 +1417,9 @@ The mantra is often recited as an expression of faith, gratitude, and spiritual 
 
         let thoughtIndex = 0;
 
-        
+        const thoughtText = document.getElementById("thoughtText");
+        const thoughtSource = document.getElementById("thoughtSource");
+        const nextThought = document.getElementById("nextThought");
 
         nextThought.addEventListener("click", () => {
             thoughtIndex = (thoughtIndex + 1) % thoughts.length;
